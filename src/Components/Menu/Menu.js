@@ -3,6 +3,8 @@ import styles from './styles.module.css';
 import icons from './icons';
 import {useDispatch, useSelector} from 'react-redux';
 
+
+//this is where i left off
 function Menu() {
     const dispatch = useDispatch();
     const menuRef = useRef();
