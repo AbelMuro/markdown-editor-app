@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'roboto';
+    src: url('./Assets/Fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./Assets/Fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./Assets/Fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'roboto slab';
+    src: url('./Assets/Fonts/RobotoSlab-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'roboto slab';
+    src: url('./Assets/Fonts/RobotoSlab-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'roboto slab';
+    src: url('./Assets/Fonts/RobotoSlab-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'roboto mono';
+    src: url('./Assets/Fonts/RobotoMono-Regular.ttf');
+    font-weight: 400;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+:root{
+    --roboto: 'roboto';
+    --roboto-slab: 'roboto slab';
+    --roboto-mono: 'roboto mono';
+
+    --nav-bg: #2B2D31;
+    --nav-saveButton-bg: #E46643;
+    --nav-saveButton-bg-hover: #F39765;
+    --nav-menuButton-bg: #35393F;
+    --nav-line-bg: #5A6069;
+
+    --menu-bg: #1D1F22;
+}
+
+*{
+    box-sizing: border-box;
+    transition: all 0.2s linear, opacity 0s;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+html, body, #root{
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    
+}
