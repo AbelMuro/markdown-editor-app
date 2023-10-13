@@ -1,10 +1,9 @@
 import React, {useEffect, useRef} from 'react';
+import ThemeSwitch from './ThemeSwitch';
 import styles from './styles.module.css';
 import icons from './icons';
 import {useDispatch, useSelector} from 'react-redux';
 
-
-//this is where i left off
 function Menu() {
     const dispatch = useDispatch();
     const menuRef = useRef();
@@ -12,29 +11,33 @@ function Menu() {
 
     useEffect(() => {
         if(open)
-            menuRef.current.style.width = '250px';
+            menuRef.current.classList.add(styles.menuOpen);        
         else
-            menuRef.current.style.width = '0px';
+            menuRef.current.classList.remove(styles.menuOpen);
         
     }, [open])
 
     return(
         <section className={styles.menu} ref={menuRef}>
-            <h2 className={styles.menu_title}>
+            <img className={styles.menu_logo} src={icons['logo']}/>
+            <h1 className={styles.menu_title}>
                 MY DOCUMENTS
-            </h2>
-            <button className={styles.menu_newDocument}>
+            </h1>
+            <button className={styles.menu_button}>
                 + New Document
             </button>
-            <div className={styles.documentData}>
-                <img src={icons['document']}/>
-                <h2>
-                    Document Name
-                </h2>
-                <h1>
-                    welcome.md
-                </h1>
+            <div className={styles.menu_documents}>
+                <div className={styles.menu_documentData}>
+                    <img src={icons['document']}/>
+                    <a>
+                        Document Name
+                    </a>
+                    <h2>
+                        welcome.md
+                    </h2>
+                </div>
             </div>
+            <ThemeSwitch/>
         </section>
     )
 }

@@ -43,20 +43,19 @@
 .container{
     display: grid;
     grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 :root{
     --roboto: 'roboto';
     --roboto-slab: 'roboto slab';
     --roboto-mono: 'roboto mono';
-
-    --nav-bg: #2B2D31;
-    --nav-saveButton-bg: #E46643;
-    --nav-saveButton-bg-hover: #F39765;
-    --nav-menuButton-bg: #35393F;
-    --nav-line-bg: #5A6069;
-
-    --menu-bg: #1D1F22;
+    --900: #1D1F22;      
+    --800: #2B2D31;
+    --700: #35393F;    
+    --600: #5A6069;    
+    --orange: #E46643;
+    --orange-hover: #F39765;
 }
 
 *{

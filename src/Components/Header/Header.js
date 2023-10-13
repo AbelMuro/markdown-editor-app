@@ -32,13 +32,13 @@ function Header() {
                     </h1>
                 </div>
             </div>
-            <div className={styles.header_edit}>
+            {!open && <div className={styles.header_edit}>
                 <button className={styles.header_trashButton}></button>
                 <button className={styles.header_saveButton}>
                     <img src={icons['save']}/>
                     {!mobile && <span>Save Changes</span>}
                 </button>
-            </div>
+            </div>}
         </header>
     )
 }
