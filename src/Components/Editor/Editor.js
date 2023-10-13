@@ -1,6 +1,7 @@
 import React, {useState, useEffect,useRef} from 'react';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
+import Split from 'react-split';
 
 var converter = new Showdown.Converter();
 
@@ -16,9 +17,12 @@ function Editor() {
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text])
 
+    useEffect(() => {
+    }, [])
+
     return(
-        <main className={styles.container}>
-            <section className={styles.editor}>
+        <Split className={styles.container}>
+            <section className={styles.editor} id='one'>
                 <h1 className={styles.editor_title}>
                     markdown
                 </h1>
@@ -28,13 +32,13 @@ function Editor() {
                     onChange={handleChange}>
                 </textarea>
             </section>    
-            <section className={styles.preview}>
+            <section className={styles.preview} id='two'>
                 <h1 className={styles.preview_title}>
                     preview
                 </h1>
                 <div ref={previewRef}></div>
             </section>        
-        </main>
+        </Split>
 
     )
 }

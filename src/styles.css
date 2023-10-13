@@ -46,6 +46,17 @@
     grid-template-rows: auto 1fr;
 }
 
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+
 :root{
     --roboto: 'roboto';
     --roboto-slab: 'roboto slab';
@@ -53,7 +64,8 @@
     --900: #1D1F22;      
     --800: #2B2D31;
     --700: #35393F;    
-    --600: #5A6069;    
+    --600: #5A6069;   
+    --200: #F5F5F5; 
     --orange: #E46643;
     --orange-hover: #F39765;
 }

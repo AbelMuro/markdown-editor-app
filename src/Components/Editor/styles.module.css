@@ -1,16 +1,26 @@
 .container{
     display: flex;
-
+    flex-direction: row;
 }
 
-.editor{
+.editor, .preview{
     width: 50%;
     display: flex;
     flex-direction: column;
+    resize: horizontal;
+}
+
+.preview{
+    border-left: 1px solid var(--300, #E4E4E4);
+}
+
+.preview div {
+    padding: 23px;
 }
 
 .editor_title, .preview_title{
     height: 42px;
+    flex-shrink: 0;
     background-color: var(--200, #F5F5F5);
     color: var(--500, #7C8187);
     font-family: var(--roboto);
@@ -43,40 +53,59 @@
     outline: none;
 }
 
-.preview{
-    width: 50%;
+
+
+
+
+
+
+
+.preview h1:not(.preview_title), 
+.preview h2, .preview h3, 
+.preview h4, .preview h5 {
+    color: var(--700, #35393F);
+    font-family: var(--roboto-slab);
 }
 
 .preview h1:not(.preview_title){
-    color: var(--700, #35393F);
-    font-family: var(--roboto-slab);
     font-size: 2rem;
     font-weight: 700;
-    line-height: normal;
     margin-bottom: 21px;
 }
 
 .preview h2 {
-    color: var(--700, #35393F);
-    font-family: var(--roboto-slab);
     font-size: 1.75rem;
-    font-style: normal;
     font-weight: 300;
-    line-height: normal;
     margin-bottom: 20px;
 }
 
 .preview h3{
-    color: var(--700, #35393F);
-    font-family: var(--roboto-slab);
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     margin-bottom: 20px;
 }
 
-.preview p{
+
+.preview h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.preview h5{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.preview h6{
+    color: var(--Orange, #E46643);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 21px;
+}
+
+.preview p:not(blockquote p){
     color: var(--500, #7C8187);
     font-family: var(--roboto-slab);
     font-size: 0.875rem;
@@ -138,3 +167,42 @@
     margin: auto;
 }
 
+
+.preview blockquote {
+    border-left: 4px solid var(--orange);
+    border-radius: 4px;
+    padding: 24px;
+    background-color: var(--200, #F5F5F5);
+    margin-bottom: 20px;
+}
+
+.preview blockquote p, .preview a {
+    color: #35393F;    
+    font-family: var(--roboto-slab);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 171.429% */
+}
+
+.preview a {
+    text-decoration: underline;
+}
+
+
+.preview pre {
+    width: 672px;
+    height: 122px;
+    padding: 24px;
+    border-radius: 4px;
+    background: var(--200, #F5F5F5);
+    margin-bottom: 20px;
+}
+
+.preview code{
+    color: var(--700, #35393F);
+    font-family: var(--roboto-mono);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+}
