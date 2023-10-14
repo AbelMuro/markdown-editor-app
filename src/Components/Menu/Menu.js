@@ -27,15 +27,15 @@ function Menu() {
                 + New Document
             </button>
             <div className={styles.menu_documents}>
-                <div className={styles.menu_documentData}>
-                    <img src={icons['document']}/>
-                    <a>
-                        Document Name
-                    </a>
-                    <h2>
-                        welcome.md
-                    </h2>
-                </div>
+                {/* <div className={styles.menu_documentData}>
+                        <img src={icons['document']}/>
+                        <a>
+                            Document Name
+                        </a>
+                        <h2>
+                            welcome.md
+                        </h2>
+                    </div> */}
             </div>
             <ThemeSwitch/>
         </section>

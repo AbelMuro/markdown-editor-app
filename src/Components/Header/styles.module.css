@@ -71,15 +71,6 @@
     line-height: normal;
 }
 
-.header_documentData h1{
-    color: #FFF;
-    font-family: var(--roboto);
-    font-size: 0.9375rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
 .header_edit{
     display: flex;
     gap: 24px;

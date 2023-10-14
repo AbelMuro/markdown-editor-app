@@ -1,0 +1,15 @@
+.input{
+    border: none;
+    background-color: transparent;
+    color: #FFF;
+    font-family: var(--roboto);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input:focus{
+    outline: none;
+    border-bottom: 1px solid var(--100, #FFF);
+}

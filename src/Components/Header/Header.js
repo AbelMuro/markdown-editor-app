@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import icons from './icons';
 import useMediaQuery from '~/Hooks/useMediaQuery.js';
 import { useDispatch, useSelector } from 'react-redux';
+import FileName from './FileName';
 
 function Header() {
     const mobile = useMediaQuery('(max-width: 570px)');
@@ -12,6 +13,10 @@ function Header() {
 
     const handleMenu = () => {
         dispatch({type: 'menu'});
+    }
+
+    const handleSave = () => {
+
     }
 
     return(
@@ -27,14 +32,12 @@ function Header() {
                     <h2>
                         Document Name
                     </h2>
-                    <h1>
-                        welcome.md
-                    </h1>
+                    <FileName/>
                 </div>
             </div>
             {!open && <div className={styles.header_edit}>
                 <button className={styles.header_trashButton}></button>
-                <button className={styles.header_saveButton}>
+                <button className={styles.header_saveButton} onClick={handleSave}>
                     <img src={icons['save']}/>
                     {!mobile && <span>Save Changes</span>}
                 </button>
