@@ -14,12 +14,19 @@ function FileName() {
         setFileName(input);
     }
 
+    const handleBlur = (e) => {
+        const input = e.target.value;
+        if(!input.endsWith('.md'))
+            alert('File name must end with .md')
+    }
+
     return(
         <input 
             type='text' 
             className={styles.input} 
             value={fileName} 
-            onChange={handleChange}/>
+            onChange={handleChange}
+            onBlur={handleBlur}/>
     );
 }
 

@@ -3,7 +3,6 @@ const initialState = "# Welcome to Markdown\n\nMarkdown is a lightweight markup 
 
 export default function fileReducer(file = {text: initialState, name: 'welcome'}, action) {
 
-
     switch(action.type){
         case 'update file text':
             return {text: action.text, name: file.name};
