@@ -20,11 +20,9 @@ function Editor() {
         setEditor(!editor)
     }
 
-
     useEffect(() => {
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text])
-
 
 
     return(

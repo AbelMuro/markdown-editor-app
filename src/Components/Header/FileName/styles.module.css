@@ -14,3 +14,9 @@
     outline: none;
     border-bottom: 1px solid var(--100, #FFF);
 }
+
+@media(max-width: 570px){
+    .input{
+        width: 140px;
+    }
+}

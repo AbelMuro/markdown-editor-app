@@ -1,77 +1,29 @@
-.container{
-    display: flex;
-    flex-direction: row;
-}
-
-.editor, .preview{
-    width: 50%;
+.editor, .preview {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-}
-
-.preview{
-    border-left: 1px solid var(--300, #E4E4E4);
-}
-
-.preview div {
-    padding: 23px;
-    height: 87.4725274725vh;
-    overflow-y: auto;
 }
 
 .editor_title, .preview_title{
-    height: 42px;
-    flex-shrink: 0;
-    background-color: var(--200, #F5F5F5);
-    color: var(--500, #7C8187);
-    font-family: var(--roboto);
     text-transform: uppercase;
+    width: 100%;
+    height: 42px;
+    padding: 0px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--500, #7C8187);
+    background-color: var(--200, #F5F5F5);
+    font-family: var(--roboto);
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     letter-spacing: 2px;
-    padding-left: 16px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-.preview_title{
-    display: flex;
-    justify-content: space-between;
-    padding-right: 16px;
-}
-
-.preview_icon_hidden, .preview_icon_visible{
-    cursor: pointer;
-    width: 16px;
-    height: 11.2px;
-    mask-position: center;
-    -webkit-mask-position: center;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    background-color: var(--500, #7C8187);    
-}
-
-.preview_icon_visible{
-    mask-image: url('./icons/icon-show-preview.svg');
-    -webkit-mask-image: url('./icons/icon-show-preview.svg');
-}
-
-.preview_icon_hidden {
-    mask-image: url('./icons/icon-hide-preview.svg');
-    -webkit-mask-image: url('./icons/icon-hide-preview.svg'); 
-}
-
-.preview_icon_hidden:hover, .preview_icon_visible:hover{
-    background-color: var(--Orange, #E46643);;
 }
 
 .editor_textarea{
     height: 87.4725274725vh;  
-    padding: 9px 16px;
+    padding: 16px;
     border: none;
     resize: none;
     color: var(--700, #35393F);
@@ -87,9 +39,39 @@
     outline: none;
 }
 
+.preview div {
+    padding: 23px;
+    height: 87.4725274725vh;
+    overflow-y: auto;
+}
+
+.previewShowIcon, .previewHideIcon{
+    cursor: pointer;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: var(--500, #7C8187);
+}
+
+.previewHideIcon:hover, .previewShowIcon:hover{
+    background-color: var(--Orange, #E46643);
+}
 
 
+.previewShowIcon{
+    width: 16px;
+    height: 11.2px;
+    mask-image: url('./icons/icon-show-preview.svg');
+    -webkit-mask-image: url('./icons/icon-show-preview.svg');
+}
 
+.previewHideIcon {
+    width: 16px;
+    height: 11.2px;
+    mask-image: url('./icons/icon-hide-preview.svg');
+    -webkit-mask-image: url('./icons/icon-hide-preview.svg');
+}
 
 
 

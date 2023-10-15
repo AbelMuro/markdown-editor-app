@@ -77,53 +77,6 @@
     align-items: center;
 }
 
-.header_trashButton{
-    width: 18px;
-    height: 20px;
-    background-color:#7C8187;
-    cursor: pointer;
-    border: none;
-    mask-image: url('./icons/icon-delete.svg');
-    -webkit-mask-image: url('./icons/icon-delete.svg');
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: center;
-    -webkit-mask-position: center;
-}
-
-.header_trashButton:hover{
-    background-color: #E46643;
-}
-
-.header_saveButton{
-    width: 152px;
-    height: 40px;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
-    background-color: var(--orange);
-    cursor: pointer;
-    color: #FFF;
-    font-family: var(--roboto);
-    font-size: 0.9375rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7.8px;
-}
-
-.header_saveButton:hover{
-    background-color: var(--orange-hover);
-}
-
-.header_saveButton img {
-    width: 16px;
-    object-fit: contain;
-}
-
 @media(max-width: 800px){
     .header_logo, .header_line{
         display: none;
@@ -141,11 +94,6 @@
 
     .header_documentData h2{
         display: none;
-    }
-
-    .header_saveButton{
-        width: 40px;
-        height: 40px;
     }
 
     .header_menuButton{

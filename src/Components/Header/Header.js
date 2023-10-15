@@ -1,12 +1,12 @@
 import React, {useRef} from 'react';
 import styles from './styles.module.css';
 import icons from './icons';
-import useMediaQuery from '~/Hooks/useMediaQuery.js';
 import { useDispatch, useSelector } from 'react-redux';
 import FileName from './FileName';
+import SaveChanges from './SaveChanges';
+import DeleteFile from './DeleteFile';
 
 function Header() {
-    const mobile = useMediaQuery('(max-width: 570px)');
     const open = useSelector(state => state.menu);
     const menuIconRef = useRef();
     const dispatch = useDispatch();
@@ -15,14 +15,11 @@ function Header() {
         dispatch({type: 'menu'});
     }
 
-    const handleSave = () => {
-
-    }
 
     return(
-        <header className={styles.header}>
+        <header className={styles.header}>            
             <div className={styles.header_document}>
-                <button className={styles.header_menuButton} onClick={handleMenu}>
+                <button className={styles.header_menuButton} onClick={handleMenu} type='button'>
                     <img src={open ? icons['close'] : icons['menu']} className={open ? styles.closeIcon : styles.menuIcon} ref={menuIconRef}/>
                 </button>
                 <img className={styles.header_logo} src={icons['logo']}/>
@@ -36,11 +33,8 @@ function Header() {
                 </div>
             </div>
             {!open && <div className={styles.header_edit}>
-                <button className={styles.header_trashButton}></button>
-                <button className={styles.header_saveButton} onClick={handleSave}>
-                    <img src={icons['save']}/>
-                    {!mobile && <span>Save Changes</span>}
-                </button>
+                <DeleteFile/>
+                <SaveChanges/>
             </div>}
         </header>
     )

@@ -59,6 +59,11 @@
 }
 
 :root{
+    --closest: 100;
+    --closer: 75;
+    --close: 50;
+    --far: 25;
+    --farthest: 0;
     --roboto: 'roboto';
     --roboto-slab: 'roboto slab';
     --roboto-mono: 'roboto mono';

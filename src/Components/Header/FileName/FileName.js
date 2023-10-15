@@ -1,30 +1,40 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles.module.css';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 //need to fix the change handler below
-function FileName() {
+const FileName = (props) => {
     const name = useSelector(state => state.file.name)    
-    const [fileName, setFileName] = useState(name);
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         let input = e.target.value;
         if(input.match(/[^a-zA-Z._-]/g)) return;
-    
-        setFileName(input);
+        dispatch({type: 'update file name', name: input});
     }
 
     const handleBlur = (e) => {
-        const input = e.target.value;
-        if(!input.endsWith('.md'))
-            alert('File name must end with .md')
+        let input = e.target.value;
+        if(!input.endsWith('.md')){
+            alert('File name must end with .md');
+            return;
+        }
+
+        input = input.slice(0, input.length - 3);
+        input = input.replaceAll('.', '');
+        if(!input.length){
+            alert('Please enter a file name');
+            return;
+        }
+        dispatch({type: 'update file name', name: input + '.md'});
     }
+
 
     return(
         <input 
             type='text' 
             className={styles.input} 
-            value={fileName} 
+            value={name} 
             onChange={handleChange}
             onBlur={handleBlur}/>
     );
