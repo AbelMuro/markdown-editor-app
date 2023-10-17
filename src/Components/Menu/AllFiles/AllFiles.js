@@ -28,12 +28,12 @@ function AllFiles() {
 
     useEffect(() => {
         const allFiles = JSON.parse(localStorage.getItem('files')) || [];
-        setFiles(allFiles);
+        setFiles(allFiles.reverse());
 
         document.addEventListener('storage', () => {
             const allFiles = JSON.parse(localStorage.getItem('files')) || [];
             console.log('event triggered');
-            setFiles(allFiles);
+            setFiles(allFiles.reverse());
         })
     }, [])
 
