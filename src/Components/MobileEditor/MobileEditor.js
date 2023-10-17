@@ -12,7 +12,7 @@ function MobileEditor() {
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
-        dispatch({type: "update file text", text: e.target.value});
+        dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
     }
 
     const handlePreview = () => {

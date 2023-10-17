@@ -41,16 +41,30 @@
     height: 218px;
     padding: 24px;
     border-radius: 4px;
-    background-color: var(--100, #FFF);
+}
+
+.dialog.light{
+    background-color: var(--100, #FFF);  
+}
+
+.dialog.dark {
+    background-color: var(--900, #1D1F22);
 }
 
 .dialog h1{
-    color: var(--700, #35393F);
     font-family: var(--roboto-slab);
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.dialog.light h1{
+    color: var(--700, #35393F);
+}
+
+.dialog.dark h1 {
+    color: var(--100, #FFF);
 }
 
 .dialog p{
@@ -60,6 +74,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 171.429% */
+}
+
+.dialog.light p{
+    color: var(--500, #7C8187);
+}
+
+.dialog.dark p{
+    color: var(--400, #C1C4CB);
 }
 
 .dialog button{

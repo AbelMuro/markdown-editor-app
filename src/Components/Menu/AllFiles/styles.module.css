@@ -1,0 +1,37 @@
+
+.documentData{
+    display: grid;
+    grid-template-columns: 13px auto;
+    column-gap: 16px;
+    row-gap: 3px;
+}
+
+.documentData img{
+    align-self: center;
+    grid-row: 1/3;
+    width: 13px;
+    object-fit: contain;
+}
+
+.documentData a{
+    color: #FFF;
+    font-family: var(--roboto);
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;    
+}
+
+.documentData a:hover{
+    color: var(--Orange, #E46643);
+}
+
+.documentData h2{
+    color: var(--500, #7C8187);
+    font-family: var(--roboto);
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}

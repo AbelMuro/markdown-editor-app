@@ -63,12 +63,19 @@
 }
 
 .header_documentData h2{
-    color: #7C8187;
     font-family: var(--roboto);
     font-size: 0.8125rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+}
+
+.dark{
+    color: var(--400, #C1C4CB);
+}
+
+.light{
+    color: #7C8187;
 }
 
 .header_edit{

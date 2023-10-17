@@ -10,9 +10,10 @@ function Header() {
     const open = useSelector(state => state.menu);
     const menuIconRef = useRef();
     const dispatch = useDispatch();
+    const theme = useSelector(state => state.theme);
 
     const handleMenu = () => {
-        dispatch({type: 'menu'});
+        dispatch({type: 'OPEN_CLOSE_MENU'});
     }
 
 
@@ -26,7 +27,7 @@ function Header() {
                 <div className={styles.header_line}></div>
                 <div className={styles.header_documentData}>
                     <img src={icons['document']}/>
-                    <h2>
+                    <h2 className={theme === 'dark' ? styles.dark : styles.light}>
                         Document Name
                     </h2>
                     <FileName/>

@@ -47,7 +47,7 @@
 }
 
 .gutter {
-    background-color: #eee;
+    background-color: var(--gutter);
     background-repeat: no-repeat;
     background-position: 50%;
     cursor: col-resize;
@@ -64,6 +64,7 @@
     --close: 50;
     --far: 25;
     --farthest: 0;
+    --gutter: #eee;
     --roboto: 'roboto';
     --roboto-slab: 'roboto slab';
     --roboto-mono: 'roboto mono';

@@ -4,21 +4,24 @@ import Header from './Components/Header'
 import Editor from './Components/Editor';
 import MobileEditor from './Components/MobileEditor';
 import useMediaQuery from './Hooks/useMediaQuery.js';
-import Store from './Store';
+import {Store, PersistedStore }from './Store';
+import {PersistGate} from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import './styles.css';
 
 function App() {
     const mobile = useMediaQuery('(max-width: 570px)');
 
-
     return(
         <Provider store={Store}>
-            <main className='container'>
-                <Menu/>
-                <Header/>
-                {mobile ? <MobileEditor/> : <Editor/>}
-            </main>        
+            <PersistGate persistor={PersistedStore}>
+                <main className='container'>
+                    <Menu/>
+                    <Header/>
+                    {mobile ? <MobileEditor/> : <Editor/>}
+                </main>                   
+            </PersistGate>
+     
         </Provider>
 
     )

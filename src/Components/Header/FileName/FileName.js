@@ -10,7 +10,7 @@ const FileName = (props) => {
     const handleChange = (e) => {
         let input = e.target.value;
         if(input.match(/[^a-zA-Z._-]/g)) return;
-        dispatch({type: 'update file name', name: input});
+        dispatch({type: 'UPDATE_FILE_NAME', name: input});
     }
 
     const handleBlur = (e) => {
@@ -26,7 +26,7 @@ const FileName = (props) => {
             alert('Please enter a file name');
             return;
         }
-        dispatch({type: 'update file name', name: input + '.md'});
+        dispatch({type: 'UPDATE_FILE_NAME', name: input + '.md'});
     }
 
 

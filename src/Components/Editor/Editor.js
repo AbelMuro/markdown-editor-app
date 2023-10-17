@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useCallback} from 'react';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
 import Split from 'react-split';
@@ -8,22 +8,33 @@ var converter = new Showdown.Converter();
 
 function Editor() {
     const text = useSelector(state => state.file.text);
+    const theme = useSelector(state => state.theme);
     const [editor, setEditor] = useState(true);
     const dispatch = useDispatch();
     const previewRef = useRef();
 
     const handleChange = (e) => {
-        dispatch({type: "update file text", text: e.target.value});
+        dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
     }
 
     const handlePreview = () => {
         setEditor(!editor)
     }
 
+    const currentTheme = useCallback((currentClass) => {
+        if(theme === 'dark')
+            return [styles.dark, currentClass || ''].join(' ');
+        else 
+            return [styles.light, currentClass || ''].join(' ');
+    }, [theme])
+
     useEffect(() => {
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text])
 
+    useEffect(() => {
+        document.documentElement.style.setProperty("--gutter", theme === 'light' ? "#eee" : "#1D1F22");
+    }, [theme])
 
     return(
         <Split
@@ -36,23 +47,23 @@ function Editor() {
             cursor="col-resize"
             className={styles.container}>
             <section className={styles.editor}>
-                <h1 className={styles.editor_title}>
+                <h1 className={currentTheme(styles.editor_title)}>
                     markdown
                 </h1>
                 <textarea 
-                    className={styles.editor_textarea}
+                    className={currentTheme(styles.editor_textarea)}
                     value={text}
                     onChange={handleChange}>
                 </textarea>
             </section> 
-            <section className={styles.preview}>
-                <h1 className={styles.preview_title}>
+            <section className={currentTheme(styles.preview)}>
+                <h1 className={currentTheme(styles.preview_title)}>
                     preview
                     {editor ? 
-                        <span className={styles.preview_icon_visible} onClick={handlePreview}/> : 
-                        <span className={styles.preview_icon_hidden} onClick={handlePreview}/>}
+                        <span className={currentTheme(styles.preview_icon_visible)} onClick={handlePreview}/> : 
+                        <span className={currentTheme(styles.preview_icon_hidden)} onClick={handlePreview}/>}
                 </h1>
-                <div ref={previewRef}></div>
+                <div ref={previewRef} className={currentTheme()}></div>
             </section>        
         </Split>
 
