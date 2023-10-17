@@ -271,10 +271,12 @@
 
 .preview.light blockquote{
     background-color: var(--200, #F5F5F5);
+    color: #35393F;
 } 
 
 .preview.dark blockquote{
     background-color: var(--800, #2B2D31);
+    color: white;
 }
 
 .preview blockquote p, .preview a {
