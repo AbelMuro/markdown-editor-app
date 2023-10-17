@@ -289,6 +289,14 @@
     text-decoration: underline;
 }
 
+.preview.light a{
+    color: #35393F;
+}
+
+.preview.dark a{
+    color: white;   
+}
+
 
 .preview pre {
     white-space: pre-wrap;

@@ -32,7 +32,6 @@ function AllFiles() {
 
         document.addEventListener('storage', () => {
             const allFiles = JSON.parse(localStorage.getItem('files')) || [];
-            console.log('event triggered');
             setFiles(allFiles.reverse());
         })
     }, [])
