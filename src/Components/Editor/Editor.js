@@ -58,7 +58,7 @@ function Editor() {
             </section> 
             <section className={currentTheme(styles.preview)}>
                 <h1 className={currentTheme(styles.preview_title)}>
-                    preview
+                        preview
                     {editor ? 
                         <span className={currentTheme(styles.preview_icon_visible)} onClick={handlePreview}/> : 
                         <span className={currentTheme(styles.preview_icon_hidden)} onClick={handlePreview}/>}

@@ -2,13 +2,15 @@ import React from 'react';
 import styles from './styles.module.css';
 import {useSelector, useDispatch} from 'react-redux';
 
-//need to fix the change handler below
-const FileName = (props) => {
+
+const FileName = () => {
     const name = useSelector(state => state.file.name)    
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
         let input = e.target.value;
+        if(input.length > 20) return;
+
         if(input.match(/[^a-zA-Z._-]/g)) return;
         dispatch({type: 'UPDATE_FILE_NAME', name: input});
     }

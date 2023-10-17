@@ -24,6 +24,7 @@
 }
 
 .menu_title{
+    white-space: nowrap;
     color: #7C8187;
     font-family: var(--roboto);
     font-size: 0.875rem;
@@ -35,7 +36,7 @@
 }
 
 .menu_button{
-    width: 100%;
+    width: 202px;
     height: 40px;
     border: none;
     cursor: pointer;
@@ -52,12 +53,11 @@
 }
 
 .menu_documents{
+    width: 177px;
     display: flex;
     flex-direction: column;
     gap: 26px;
 }
-
-
 
 @media(max-width: 800px){
     .menu_logo{

@@ -137,7 +137,7 @@
     color: var(--400, #C1C4CB);
 }
 
-.preview.light h1,
+.preview.light h1:not(.preview_title),
 .preview.light h2,
 .preview.light h3,
 .preview.light h4,
@@ -146,7 +146,7 @@
 }
 
 
-.preview.dark h1,
+.preview.dark h1:not(.preview_title),
 .preview.dark h2,
 .preview.dark h3,
 .preview.dark h4,
