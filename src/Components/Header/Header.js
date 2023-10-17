@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, memo} from 'react';
 import styles from './styles.module.css';
 import icons from './icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -41,4 +41,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default memo(Header);

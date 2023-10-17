@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useEffect, useRef, useCallback, memo} from 'react';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
 import Split from 'react-split';
@@ -70,4 +70,4 @@ function Editor() {
     )
 }
 
-export default Editor;
+export default memo(Editor);

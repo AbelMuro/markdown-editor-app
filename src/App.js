@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from './Components/Grid';
 import Menu from './Components/Menu'
 import Header from './Components/Header'
 import Editor from './Components/Editor';
@@ -15,15 +16,13 @@ function App() {
     return(
         <Provider store={Store}>
             <PersistGate persistor={PersistedStore}>
-                <main className='container'>
+                <Grid>
                     <Menu/>
                     <Header/>
                     {mobile ? <MobileEditor/> : <Editor/>}
-                </main>                   
+                </Grid>                   
             </PersistGate>
-     
         </Provider>
-
     )
 }
 export default App;

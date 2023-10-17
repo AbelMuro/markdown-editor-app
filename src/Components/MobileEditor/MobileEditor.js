@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, memo} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
@@ -52,4 +52,4 @@ function MobileEditor() {
     )
 }
 
-export default MobileEditor;
+export default memo(MobileEditor);

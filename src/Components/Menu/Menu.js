@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, memo} from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import styles from './styles.module.css';
 import icons from './icons';
@@ -44,4 +44,4 @@ function Menu() {
     )
 }
 
-export default Menu;
+export default memo(Menu);

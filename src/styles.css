@@ -40,12 +40,6 @@
     font-weight: 400;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-}
-
 .gutter {
     background-color: var(--gutter);
     background-repeat: no-repeat;
