@@ -53,6 +53,7 @@
 }
 
 :root{
+    --scroll-handle-color: #C1C4CB;
     --closest: 100;
     --closer: 75;
     --close: 50;
@@ -86,3 +87,16 @@ html, body, #root{
     overflow: hidden;
     width: 100%;
 }
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+
+}
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-handle-color); 
+    border-radius: 10px;
+  }

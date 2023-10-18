@@ -10,6 +10,7 @@
     overflow-x: hidden;
 }
 
+
 .preview.light{
     border-left: 1px solid var(--300, #E4E4E4);
 }
@@ -23,6 +24,7 @@
     padding: 23px;
     height: 87.4725274725vh;
     overflow-y: auto;
+
 }
 
 
