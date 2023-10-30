@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef, memo} from 'react';
+import React, {useState, useEffect, useRef, memo, useCallback} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
@@ -9,6 +9,7 @@ function MobileEditor() {
     const [preview, setPreview] = useState(false);
     const previewRef = useRef();
     const text = useSelector(state => state.file.text);
+    const theme = useSelector(state => state.theme);
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
@@ -18,6 +19,13 @@ function MobileEditor() {
     const handlePreview = () => {
         setPreview(!preview);
     }
+
+    const currentTheme = useCallback((currentClass) => {
+        if(theme === 'dark')
+            return [styles.dark, currentClass || ''].join(' ');
+        else 
+            return [styles.light, currentClass || ''].join(' ');
+    }, [theme])
 
     useEffect(() => {
         if(!preview) return;
@@ -29,21 +37,21 @@ function MobileEditor() {
     return(
         <section className={styles.container}>
             {preview ? 
-                <section className={styles.preview}>
-                    <h1 className={styles.preview_title}>
+                <section className={currentTheme(styles.preview)}>
+                    <h1 className={currentTheme(styles.preview_title)}>
                         preview 
-                        <span className={styles.previewHideIcon} onClick={handlePreview}/>
+                        <span className={currentTheme(styles.previewHideIcon)} onClick={handlePreview}/>
                     </h1>
-                    <div ref={previewRef}></div>
+                    <div ref={previewRef} className={currentTheme()}></div>
                 </section>   
                 : 
                 <section className={styles.editor}>
-                    <h1 className={styles.editor_title}>
+                    <h1 className={currentTheme(styles.editor_title)}>
                         markdown
-                        <span className={styles.previewShowIcon} onClick={handlePreview}/>
+                        <span className={currentTheme(styles.previewShowIcon)} onClick={handlePreview}/>
                     </h1>
                     <textarea 
-                        className={styles.editor_textarea}
+                        className={currentTheme(styles.editor_textarea)}
                         value={text}
                         onChange={handleChange}>
                     </textarea>
