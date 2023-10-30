@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import './styles.css';
 
 function App() {
-    const mobile = useMediaQuery('(max-width: 570px)');
+    const mobile =  true;
 
     return(
         <Provider store={Store}>
