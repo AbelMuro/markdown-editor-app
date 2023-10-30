@@ -76,7 +76,7 @@
 
 *{
     box-sizing: border-box;
-    transition: all 0.2s linear, opacity 0s;
+    transition: all 0.2s linear;
     margin: 0px;
     padding: 0px;
 }
