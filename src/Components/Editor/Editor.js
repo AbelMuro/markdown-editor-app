@@ -4,10 +4,11 @@ import MobileEditor from './MobileEditor';
 import useMediaQuery from '~/Hooks/useMediaQuery';
 
 function Editor() {
-    const mobile = useMediaQuery('(max-width: 570px)')
+    const mobile = useMediaQuery('(max-width: 570px)');
 
-
-    return mobile ? <MobileEditor/> : <DesktopEditor/>;
+    return <>
+            {mobile ? <MobileEditor/> : <DesktopEditor/>}
+           </>
 }
 
 export default Editor;
