@@ -4,7 +4,7 @@ import Showdown from 'showdown';
 import Split from 'react-split';
 import {useSelector, useDispatch} from 'react-redux';
 
-var converter = new Showdown.Converter();
+
 
 function DesktopEditor() {
     const text = useSelector(state => state.file.text);
@@ -12,6 +12,7 @@ function DesktopEditor() {
     const [editor, setEditor] = useState(true);
     const dispatch = useDispatch();
     const previewRef = useRef();
+    const converter = new Showdown.Converter();    
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
