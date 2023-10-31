@@ -60,4 +60,4 @@ function MobileEditor() {
     )
 }
 
-export default memo(MobileEditor);
+export default MobileEditor;

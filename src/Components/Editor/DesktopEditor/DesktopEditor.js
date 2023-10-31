@@ -70,4 +70,4 @@ function DesktopEditor() {
     )
 }
 
-export default memo(DesktopEditor);
+export default DesktopEditor;
