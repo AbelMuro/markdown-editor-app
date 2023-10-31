@@ -19,7 +19,7 @@ const config = getPersistConfig({
     rootReducer: Reducer
 });
 
-const persistedReducer = persistReducer({key: 'root', storage}, Reducer);
+const persistedReducer = persistReducer(config, Reducer);
 
 export const store = configureStore({                     
     reducer: persistedReducer,
