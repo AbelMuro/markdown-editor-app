@@ -1,9 +1,7 @@
-import React, {useState, useEffect, useRef, memo, useCallback} from 'react';
+import React, {useState, useEffect, useRef, useCallback} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles.module.css';
 import Showdown from 'showdown';
-
-var converter = new Showdown.Converter();
 
 function MobileEditor() {
     const [preview, setPreview] = useState(false);
@@ -11,6 +9,7 @@ function MobileEditor() {
     const text = useSelector(state => state.file.text);
     const theme = useSelector(state => state.theme);
     const dispatch = useDispatch();
+    const converter = new Showdown.Converter();    
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
