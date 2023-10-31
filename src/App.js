@@ -13,11 +13,11 @@ function App() {
     return(
         <Provider store={Store}>
             <PersistGate persistor={PersistedStore}>
-                <Grid>
+                <main className={'container'}>
                     <Menu/>
                     <Header/>
-                    <Editor/>
-                </Grid>                   
+                    <Editor/>                        
+                </main>               
             </PersistGate>
         </Provider>
     )

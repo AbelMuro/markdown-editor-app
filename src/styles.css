@@ -74,6 +74,13 @@
     --orange-hover: #F39765;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+
 *{
     box-sizing: border-box;
     transition: all 0.2s linear;
