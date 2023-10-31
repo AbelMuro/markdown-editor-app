@@ -34,8 +34,8 @@ function Header() {
                 </div>
             </div>
             {!open && <div className={styles.header_edit}>
-                <DeleteFile/>
-                <SaveChanges/>
+            <DeleteFile/>
+            <SaveChanges/>
             </div>}
         </header>
     )
