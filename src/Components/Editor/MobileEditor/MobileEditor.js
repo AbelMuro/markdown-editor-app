@@ -30,6 +30,8 @@ function MobileEditor() {
         if(!preview || !previewRef.current) return;
 
         const converter = new Showdown.Converter();    
+        if(!converter)
+            alert('converter is falsey');
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text, preview])
 

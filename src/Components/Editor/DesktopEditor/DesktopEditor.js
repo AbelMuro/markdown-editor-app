@@ -27,9 +27,9 @@ function DesktopEditor() {
     }, [theme])
 
     useEffect(() => {
-        if(!previewRef.current) return;
-
         const converter = new Showdown.Converter();    
+        if(!converter)
+        alert('converter is falsey');
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text])
 
