@@ -16,7 +16,6 @@ function App() {
                 <Grid>
                     <Menu/>
                     <Header/>
-                    <Editor/>
                 </Grid>                   
             </PersistGate>
         </Provider>
