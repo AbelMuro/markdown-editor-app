@@ -6,9 +6,10 @@ import useMediaQuery from '~/Hooks/useMediaQuery.js';
 function Editor() {
     const mobile = useMediaQuery('(max-width: 570px)');
 
-    return <>
-            {mobile ? <MobileEditor/> : <DesktopEditor/>}
+    return (<>
+            <DesktopEditor/>
            </>
+           )
 }
 
 export default Editor;
