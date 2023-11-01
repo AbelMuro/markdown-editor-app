@@ -3,7 +3,7 @@ import Grid from './Components/Grid';
 import Menu from './Components/Menu'
 import Header from './Components/Header'
 import Editor from './Components/Editor';
-import {Store, PersistedStore }from './Store';
+import {Store, PersistedStore} from './Store';
 import {PersistGate} from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import './styles.css';
