@@ -27,8 +27,8 @@ function MobileEditor() {
     }, [theme])
 
     useEffect(() => {
-        if(!preview) return;
-        
+        if(!preview || !previewRef.current) return;
+
         const converter = new Showdown.Converter();    
         previewRef.current.setHTML(converter.makeHtml(text));  
     }, [text, preview])
