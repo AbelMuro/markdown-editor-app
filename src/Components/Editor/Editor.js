@@ -7,9 +7,8 @@ function Editor() {
     const mobile = useMediaQuery('(max-width: 570px)');
 
     return (<>
-            <DesktopEditor/>
-           </>
-           )
+            {mobile ? <MobileEditor/> : <DesktopEditor/>}
+           </>)
 }
 
 export default Editor;

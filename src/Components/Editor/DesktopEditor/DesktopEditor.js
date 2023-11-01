@@ -9,8 +9,7 @@ function DesktopEditor() {
     const theme = useSelector(state => state.theme);
     const [editor, setEditor] = useState(true);
     const dispatch = useDispatch();
-    const previewRef = useRef();
-    const converter = new Showdown.Converter();    
+    const previewRef = useRef();  
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
@@ -27,9 +26,6 @@ function DesktopEditor() {
             return [styles.light, currentClass || ''].join(' ');
     }, [theme])
 
-    useEffect(() => {
-        previewRef.current.setHTML(converter.makeHtml(text));  
-    }, [text])
 
     useEffect(() => {
         document.documentElement.style.setProperty("--gutter", theme === 'light' ? "#eee" : "#1D1F22");

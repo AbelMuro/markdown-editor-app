@@ -8,8 +8,7 @@ function MobileEditor() {
     const previewRef = useRef();
     const text = useSelector(state => state.file.text);
     const theme = useSelector(state => state.theme);
-    const dispatch = useDispatch();
-    const converter = new Showdown.Converter();    
+    const dispatch = useDispatch(); 
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
@@ -26,11 +25,6 @@ function MobileEditor() {
             return [styles.light, currentClass || ''].join(' ');
     }, [theme])
 
-    useEffect(() => {
-        if(!preview) return;
-
-        previewRef.current.setHTML(converter.makeHtml(text));  
-    }, [text, preview])
 
 
     return(
