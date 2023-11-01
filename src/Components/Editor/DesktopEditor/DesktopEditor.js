@@ -4,8 +4,6 @@ import Showdown from 'showdown';
 import Split from 'react-split';
 import {useSelector, useDispatch} from 'react-redux';
 
-
-
 function DesktopEditor() {
     const text = useSelector(state => state.file.text);
     const theme = useSelector(state => state.theme);
@@ -39,9 +37,9 @@ function DesktopEditor() {
 
     return(
         <Split
-            sizes={editor ? [50, 50] : [0, 100]}
-            minSize={editor ? [200, 200] : [0, 100]}
-            gutterSize={editor ? 10 : 0}
+            sizes={[50, 50]}
+            minSize={[200, 200]}
+            gutterSize={10}
             gutterAlign="center" 
             snapOffset={50}
             dragInterval={20}
