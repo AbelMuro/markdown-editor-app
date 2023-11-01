@@ -1,15 +1,14 @@
-import React, {useState, useEffect, useRef, useCallback, memo} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import styles from './styles.module.css';
-import Showdown from 'showdown';
 import Split from 'react-split';
 import {useSelector, useDispatch} from 'react-redux';
+import MarkdownView from 'react-showdown';
 
 function DesktopEditor() {
     const text = useSelector(state => state.file.text);
     const theme = useSelector(state => state.theme);
     const [editor, setEditor] = useState(true);
     const dispatch = useDispatch();
-    const previewRef = useRef();
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
@@ -26,12 +25,7 @@ function DesktopEditor() {
             return [styles.light, currentClass || ''].join(' ');
     }, [theme])
 
-    useEffect(() => {
-        const converter = new Showdown.Converter();    
-        if(!converter)
-        alert('converter is falsey');
-        previewRef.current.setHTML(converter.makeHtml(text));  
-    }, [text])
+
 
     useEffect(() => {
         document.documentElement.style.setProperty("--gutter", theme === 'light' ? "#eee" : "#1D1F22");
@@ -64,7 +58,7 @@ function DesktopEditor() {
                         <span className={currentTheme(styles.preview_icon_visible)} onClick={handlePreview}/> : 
                         <span className={currentTheme(styles.preview_icon_hidden)} onClick={handlePreview}/>}
                 </h1>
-                <div ref={previewRef} className={currentTheme()}></div>
+                <MarkdownView markdown={text} className={currentTheme()}/>
             </section>        
         </Split>
 

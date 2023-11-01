@@ -1,15 +1,13 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useCallback} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles.module.css';
-import Showdown from 'showdown';
+import MarkdownView from 'react-showdown';
 
 function MobileEditor() {
     const [preview, setPreview] = useState(false);
-    const previewRef = useRef();
     const text = useSelector(state => state.file.text);
     const theme = useSelector(state => state.theme);
     const dispatch = useDispatch();
-    const converter = new Showdown.Converter();    
 
     const handleChange = (e) => {
         dispatch({type: "UPDATE_FILE_TEXT", text: e.target.value});
@@ -26,14 +24,6 @@ function MobileEditor() {
             return [styles.light, currentClass || ''].join(' ');
     }, [theme])
 
-    useEffect(() => {
-        if(!preview || !previewRef.current) return;
-
-        const converter = new Showdown.Converter();    
-        if(!converter)
-            alert('converter is falsey');
-        previewRef.current.setHTML(converter.makeHtml(text));  
-    }, [text, preview])
 
 
     return(
@@ -44,7 +34,7 @@ function MobileEditor() {
                         preview 
                         <span className={currentTheme(styles.previewHideIcon)} onClick={handlePreview}/>
                     </h1>
-                    <div ref={previewRef} className={currentTheme()}></div>
+                    <MarkdownView markdown={text} className={currentTheme()}/>
                 </section>   
                 : 
                 <section className={styles.editor}>
