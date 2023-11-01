@@ -37,9 +37,9 @@ function DesktopEditor() {
 
     return(
         <Split
-            sizes={[50, 50]}
-            minSize={[200, 200]}
-            gutterSize={10}
+            sizes={editor ? [50, 50] : [0, 100]}
+            minSize={editor ? [200, 200] : [0, 100]}
+            gutterSize={editor ? 10 : 0}
             gutterAlign="center" 
             snapOffset={50}
             dragInterval={20}
